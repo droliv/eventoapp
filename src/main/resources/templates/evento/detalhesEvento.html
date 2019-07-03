@@ -2,7 +2,7 @@
 <html xmlns:th="http://thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
-		<title>Evento App</title>
+		<title>Detalhes Evento</title>
 		<!--Import Google Icon Font-->
       	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
       	<!--Import materialize.css-->
@@ -12,10 +12,8 @@
       	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 	<body>
-		<header>
-		<h1>Lista de eventos</h1>
-		<a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Cadastrar Evento</a>
-		</header>
+		<h1>Detalhes do Evento</h1>
+		<a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">list</i>Lista de eventos</a>
 		<div class="container">
 			<table>
 				<thead>
@@ -26,9 +24,9 @@
 						<th>Hora</th>
 					</tr>
 				</thead>
-				<tbody th:each="evento : ${eventos}">
+				<tbody th:each="evento : ${evento}">
 					<tr>
-						<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}" ><span th:text="${evento.nome}"></span></a></td>
+						<td><span th:text="${evento.nome}"></span></td>
 						<td><span th:text="${evento.local}"></span></td>
 						<td><span th:text="${evento.data}"></span></td>
 						<td><span th:text="${evento.hora}"></span></td>
