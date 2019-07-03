@@ -33,6 +33,20 @@
 					</tr>
 				</tbody>
 			</table>
+			<br />
+			<form method="post" class="container">
+			<input name="evento" type="hidden" value="${evento.codigo}"/>
+			Nome: <input type="text" value="" name="nomeConvidado"/>
+			<div class="row">
+				<div class="input-field col s6">
+					RG: <input type="text" value="" name="rg"/>
+				</div>
+				<div class="input-field col s6">
+					Telefone: <input type="text" value="" name="telefone"/>
+				</div>
+			</div>
+			<button class="waves-effect waves-light btn" type="submit"><i class="material-icons left">save</i>Adcionar</button>
+		</form>
 		</div>
 		<!--JavaScript at end of body for optimized loading-->
       	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
