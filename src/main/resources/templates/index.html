@@ -20,6 +20,7 @@
 			<table>
 				<thead>
 					<tr>
+					    <th></th>
 						<th>Nome</th>
 						<th>Local</th>
 						<th>Data</th>
@@ -28,6 +29,10 @@
 				</thead>
 				<tbody th:each="evento : ${eventos}">
 					<tr>
+					    <td>
+					    <!-- <a th:href="${(#mvc.url('EC#editarEvento').arg(0, evento.codigo)).build()}" ><i class="small material-icons">mode_edit</i></a> -->
+					    <a th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}" ><i class="small material-icons">delete_forever</i></a>
+					    </td>
 						<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}" ><span th:text="${evento.nome}"></span></a></td>
 						<td><span th:text="${evento.local}"></span></td>
 						<td><span th:text="${evento.data}"></span></td>
